@@ -278,6 +278,7 @@ input[type="password"]:not(:placeholder-shown)+label {
 
 /* Media Query */
 @media (max-width: 600px) {
+
     tbody,
     thead {
         display: block;
@@ -298,12 +299,20 @@ input[type="password"]:not(:placeholder-shown)+label {
             // Add border and padding to the stacked table cells
             td {
                 display: block;
-                text-align: right;
-
+                text-align: left;
+                border-bottom: 1px solid #ddd;
                 &:last-child {
                     border-bottom: 1px solid #ddd;
                 }
             }
+        }
+    }
+
+    .apps-container {
+        margin: 0 16px;
+
+        .hidden {
+            display: none;
         }
     }
 

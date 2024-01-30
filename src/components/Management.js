@@ -105,7 +105,7 @@ const Management = ({ isLoginState }) => {
                 </div>
                 <table className="table">
                     <tbody>
-                        <tr>
+                        <tr className='hidden'>
                             <th>#</th>
                             <th onClick={() => handleSort('title')}>
                                 Title {getArrowIndicator('title')}

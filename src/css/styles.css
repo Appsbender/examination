@@ -260,10 +260,17 @@ input[type=password]:not(:placeholder-shown) + label {
   }
   tbody tr td {
     display: block;
-    text-align: right;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
   }
   tbody tr td:last-child {
     border-bottom: 1px solid #ddd;
+  }
+  .apps-container {
+    margin: 0 16px;
+  }
+  .apps-container .hidden {
+    display: none;
   }
   .apps-wrapper {
     display: flex;
