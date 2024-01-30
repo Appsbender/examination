@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const formData = {
     keywords: "",
 }
-const Management = ({ isLoginState }) => {
+const Management = ({ isLoginState, account }) => {
     const [cssClass, setCSSClass] = useState('activate-fade');
     const [products, setProducts] = useState([]);
     const [detail, setDetail] = useState(formData);
@@ -128,7 +128,7 @@ const Management = ({ isLoginState }) => {
                             <th onClick={() => handleSort('category')}>
                                 Category {getArrowIndicator('category')}
                             </th>
-                            <th className="action">Action</th>
+                            {account.type !== 'Viewer' ? <th className="action">Action</th> : ''}
                         </tr>
                         {products.map((product, index) => (
                             <tr key={index}>
@@ -142,9 +142,11 @@ const Management = ({ isLoginState }) => {
                                 <td>{product.stock}</td>
                                 <td>{product.brand}</td>
                                 <td>{product.category}</td>
-                                <td className="action">
-                                    <button className="apps-btn apps-btn-sm apps-btn-success">Edit</button>
-                                </td>
+                                {account.type === 'Editor' ?
+                                    <td className="action">
+                                        <button className="apps-btn apps-btn-sm apps-btn-success">Edit</button>
+                                    </td>
+                                    : ''}
                             </tr>
                         ))}
                     </tbody>
