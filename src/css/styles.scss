@@ -62,6 +62,8 @@ body {
 .error-message {
     margin-bottom: 1rem;
     display: block;
+    text-align: center;
+    color: red;
 }
 
 .apps-btn-md {
@@ -301,6 +303,7 @@ input[type="password"]:not(:placeholder-shown)+label {
                 display: block;
                 text-align: left;
                 border-bottom: 1px solid #ddd;
+
                 &:last-child {
                     border-bottom: 1px solid #ddd;
                 }

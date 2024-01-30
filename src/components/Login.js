@@ -12,31 +12,7 @@ const Login = ({ isLoginState }) => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(details),
-        };
-        try {
-            const process = await fetch(`https://dummyjson.com/auth/login`, requestOptions);
-            if (!process.ok) {
-                setErrorMessage('Invalid Credentials.');
-                return;
-            }
-            const response = await process.json();
-            if (response) {
-                setTimeout(() => {
-                    setSubmitted(true);
-                    //let override the role since I cannot find any on dummy json server
-                    const updatedResponse = { ...response, type: "Editor" };
-                    isLoginState(true, updatedResponse); // set this to get the user roles is there's any
-                }, 500);
-            }
-        } catch (error) {
-            setErrorMessage(error.message);
-        }
-
-        /* if (validatePassword(details.password)) {
+        if (validatePassword(details.password)) {
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -62,7 +38,7 @@ const Login = ({ isLoginState }) => {
             }
         } else {
             setErrorMessage('Password does not meet the requirements.');
-        } */
+        }
     }
 
     const validatePassword = (password) => {

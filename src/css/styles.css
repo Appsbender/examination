@@ -53,6 +53,8 @@ body {
 .error-message {
   margin-bottom: 1rem;
   display: block;
+  text-align: center;
+  color: red;
 }
 
 .apps-btn-md {
